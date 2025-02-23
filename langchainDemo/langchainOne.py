@@ -1,30 +1,15 @@
 import getpass
 import os
+
+if not os.environ.get("AZURE_OPENAI_API_KEY"):
+    os.environ["AZURE_OPENAI_API_KEY"] = getpass.getpass("Enter API key for Azure: ")
+
 from langchain_openai import AzureChatOpenAI
 
-azure_openAi_api_key = os.getenv("azure_openAi_api_key",
-                                 "")
-azure_openAi_endpoint = os.getenv("azure_openAi_endpoint",
-                                  "")
-azure_openAi_deployment_name = os.getenv("azure_openAi_deployment_name", "gpt-40")
-azure_openAi_version = os.getenv("azure_openAi_version", "2024-05-01-preview")
-
-client = AzureChatOpenAI(
-    azure_key=azure_openAi_api_key,
-    azure_endpoint=azure_openAi_endpoint,
-    openai_api_version=azure_openAi_version,
+model = AzureChatOpenAI(
+    azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
+    azure_deployment=os.environ["AZURE_OPENAI_DEPLOYMENT_NAME"],
+    openai_api_version=os.environ["AZURE_OPENAI_API_VERSION"],
 )
 
-from typing import Optional
-from pydantic import BaseModel, Field
-
-
-class Joke(BaseModel):
-    """Joke to tell user."""
-    setup: str = Field(description="The setup of the joke")
-    punchline: str = Field(description="The punchline of the joke")
-    rating: Optional[int] = Field(default=None, description="How funny the joke is,from 1 to 10")
-
-
-structured_llm = client.with_structured_output(Joke)
-structured_llm.invoke("Tell me a joke about a duck.")
+model.invoke("Hello, world!")
