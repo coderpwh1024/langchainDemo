@@ -1,8 +1,8 @@
 import getpass
 import os
 
-if not os.environ.get("AZURE_OPENAI_API_KEY"):
-    os.environ["AZURE_OPENAI_API_KEY"] = getpass.getpass("Enter API key for Azure: ")
+# if not os.environ.get("AZURE_OPENAI_API_KEY"):
+#     os.environ["AZURE_OPENAI_API_KEY"] = getpass.getpass("Enter API key for Azure: ")
 
 from langchain_openai import AzureChatOpenAI
 
