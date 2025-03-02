@@ -1,18 +1,23 @@
 import getpass
 import os
+from asyncio import Timeout
 
-if not os.environ.get("AZURE_OPENAI_API_KEY"):
-    os.environ["AZURE_OPENAI_API_KEY"] = getpass.getpass("Enter API key for Azure: ")
+from openai import api_key
+
+
+
+endpoint = "https"
+deployment = ""
+apiKey = "";
 
 from langchain_openai import AzureChatOpenAI
 
-
-
-
 model = AzureChatOpenAI(
-    azure_endpoint=os.environ["AZURE_OPENAI_ENDPOINT"],
-    azure_deployment=os.environ["AZURE_OPENAI_DEPLOYMENT_NAME"],
-    openai_api_version=os.environ["AZURE_OPENAI_API_VERSION"],
+    azure_endpoint=endpoint,
+    azure_deployment=deployment,
+    api_key=apiKey,
+    openai_api_version="2024-05-01-preview",
+
 )
 
-model.invoke("Hello, world!")
+print(model.invoke("帮我推荐一下深圳旅游景点"))
