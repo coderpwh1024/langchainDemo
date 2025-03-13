@@ -6,7 +6,7 @@ from openai import api_key
 
 
 
-endpoint = "https"
+endpoint = ""
 deployment = ""
 apiKey = "";
 
