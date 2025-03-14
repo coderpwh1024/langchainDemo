@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5652da04-9d13-441e-a34d-8183dc799db9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/langchainDemo/ChatPromptTemplate.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/langchainDemo/Tool.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,6 +36,7 @@
     "Python.ChatPromptTemplate.executor": "Run",
     "Python.Prompt.executor": "Run",
     "Python.PromptTemplates.executor": "Run",
+    "Python.Tool.executor": "Run",
     "Python.Two.executor": "Run",
     "Python.langchainOne (1).executor": "Run",
     "Python.langchainOne.executor": "Run",
@@ -51,7 +52,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Python.ChatPromptTemplate">
+  <component name="RunManager" selected="Python.Tool">
     <configuration name="ChatPromptTemplate" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchainDemo" />
       <option name="ENV_FILES" value="" />
@@ -121,7 +122,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Two" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="Tool" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchainDemo" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -135,7 +136,7 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/langchainDemo/Two.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/langchainDemo/Tool.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -169,11 +170,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.Tool" />
+        <item itemvalue="Python.Prompt" />
         <item itemvalue="Python.ChatPromptTemplate" />
         <item itemvalue="Python.PromptTemplates" />
         <item itemvalue="Python.langchainOne (1)" />
-        <item itemvalue="Python.Prompt" />
-        <item itemvalue="Python.Two" />
       </list>
     </recent_temporary>
   </component>
@@ -206,7 +207,8 @@
       <workItem from="1741615075251" duration="1299000" />
       <workItem from="1741785481299" duration="2569000" />
       <workItem from="1741863366975" duration="430000" />
-      <workItem from="1741871872032" duration="2623000" />
+      <workItem from="1741871872032" duration="4491000" />
+      <workItem from="1741935382026" duration="4182000" />
     </task>
     <servers />
   </component>
@@ -228,8 +230,9 @@
     <SUITE FILE_PATH="coverage/langchainDemo$ChatPromptTemplate.coverage" NAME="ChatPromptTemplate Coverage Results" MODIFIED="1741873250473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$PromptTemplates.coverage" NAME="PromptTemplates Coverage Results" MODIFIED="1741872672780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$Two.coverage" NAME="Two Coverage Results" MODIFIED="1740903645900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$Tool.coverage" NAME="Tool Coverage Results" MODIFIED="1741938734568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$langchainOne__1_.coverage" NAME="langchainOne (1) Coverage Results" MODIFIED="1741872526004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$langchainOne.coverage" NAME="langchainOne Coverage Results" MODIFIED="1740045029990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/langchainDemo$Prompt.coverage" NAME="Prompt Coverage Results" MODIFIED="1741872195827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$Prompt.coverage" NAME="Prompt Coverage Results" MODIFIED="1741938477068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
   </component>
 </project>
