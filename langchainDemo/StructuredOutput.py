@@ -4,7 +4,6 @@ from pydantic import BaseModel, Field
 from langchain_openai import AzureChatOpenAI
 from typing_extensions import Annotated, TypedDict
 
-
 # Pydantic
 # class Joke(BaseModel):
 #     """Joke to tell user."""
@@ -16,16 +15,38 @@ from typing_extensions import Annotated, TypedDict
 
 
 # TypedDict
-class Joke(TypedDict):
-    """Joke to tell user."""
-    setup: Annotated[str, ..., "The setup of the joke"]
-    punchline: Annotated[str, ..., "The punchline of the joke"]
-    rating: Annotated[Optional[int], None, "How funny the joke is,from 1 to 10"]
+# class Joke(TypedDict):
+#     """Joke to tell user."""
+#     setup: Annotated[str, ..., "The setup of the joke"]
+#     punchline: Annotated[str, ..., "The punchline of the joke"]
+#     rating: Annotated[Optional[int], None, "How funny the joke is,from 1 to 10"]
 
 
-endpoint = " "
-deployment = " "
-apiKey = " "
+json_schema = {
+    "title": "joke",
+    "description": "Joke to tell user.",
+    "type": "object",
+    "properties": {
+        "setup": {
+            "type": "string",
+            "description": "The setup of the joke",
+        },
+        "punchline": {
+            "type": "string",
+            "description": "The punchline to the joke",
+        },
+        "rating": {
+            "type": "integer",
+            "description": "How funny the joke is, from 1 to 10",
+            "default": None,
+        },
+    },
+    "required": ["setup", "punchline"],
+}
+
+endpoint = ""
+deployment = ""
+apiKey = ""
 
 model = AzureChatOpenAI(
     azure_endpoint=endpoint,
@@ -34,7 +55,10 @@ model = AzureChatOpenAI(
     openai_api_version="2024-08-01-preview",
 )
 
-query = "Tell me a joke about cats"
+query = "How are you today?"
 
-structured_llm = model.with_structured_output(Joke)
+# structured_llm = model.with_structured_output(Joke)
+# print(structured_llm.invoke(query))
+
+structured_llm = model.with_structured_output(json_schema)
 print(structured_llm.invoke(query))
