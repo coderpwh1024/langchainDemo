@@ -2,19 +2,30 @@ import os
 from typing import Optional
 from pydantic import BaseModel, Field
 from langchain_openai import AzureChatOpenAI
+from typing_extensions import Annotated, TypedDict
 
 
-class Joke(BaseModel):
+# Pydantic
+# class Joke(BaseModel):
+#     """Joke to tell user."""
+#     setup: str = Field(description="The setup of the joke")
+#     punchline: str = Field(description="The punchline of the joke")
+#     rating: Optional[int] = Field(
+#         default=None, description="How funny the joke is,from 1 to 10"
+#     )
+
+
+# TypedDict
+class Joke(TypedDict):
     """Joke to tell user."""
-    setup: str = Field(description="The setup of the joke")
-    punchline: str = Field(description="The punchline of the joke")
-    rating: Optional[int] = Field(
-        default=None, description="How funny the joke is,from 1 to 10"
-    )
+    setup: Annotated[str, ..., "The setup of the joke"]
+    punchline: Annotated[str, ..., "The punchline of the joke"]
+    rating: Annotated[Optional[int], None, "How funny the joke is,from 1 to 10"]
 
-endpoint = ""
-deployment = ""
-apiKey = ""
+
+endpoint = " "
+deployment = " "
+apiKey = " "
 
 model = AzureChatOpenAI(
     azure_endpoint=endpoint,
@@ -25,5 +36,5 @@ model = AzureChatOpenAI(
 
 query = "Tell me a joke about cats"
 
-structured_llm =model.with_structured_output(Joke)
+structured_llm = model.with_structured_output(Joke)
 print(structured_llm.invoke(query))
