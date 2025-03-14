@@ -1,7 +1,5 @@
 from langchain_core.prompts import ChatPromptTemplate
-
-from langchainDemo.Prompt import prompt
-from langchainDemo.StructuredOutput import structured_llm
+from langchain_openai import AzureChatOpenAI
 
 system = """You are a hilarious comedian. Your specialty is knock-knock jokes. \
 Return a joke which has the setup (the response to "Who's there?") and the final punchline (the response to "<setup> who?").
@@ -19,6 +17,18 @@ example_assistant: {{"setup": "Caterpillar", "punchline": "Caterpillar really sl
 
 prompt = ChatPromptTemplate.from_messages([("system", system), ("human", "{input}")])
 
-few_shot_structured_llm =  prompt|structured_llm
-few_shot_structured_llm.invoke("what's something funny about woodpeckers")
+few_shot_structured_llm = prompt
+# few_shot_structured_llm.invoke("what's something funny about woodpeckers")
 
+endpoint = ""
+deployment = ""
+apiKey = ""
+
+model = AzureChatOpenAI(
+    azure_endpoint=endpoint,
+    azure_deployment=deployment,
+    api_key=apiKey,
+    openai_api_version="2024-08-01-preview",
+)
+response = model.invoke(few_shot_structured_llm.invoke("what's something funny about woodpeckers"))
+print(response)
