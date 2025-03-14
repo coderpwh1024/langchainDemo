@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5652da04-9d13-441e-a34d-8183dc799db9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/langchainDemo/StructuredStream.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/langchainDemo/StructuredPrompting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,6 +38,7 @@
     "Python.PromptTemplates.executor": "Run",
     "Python.StructuredMultiple.executor": "Run",
     "Python.StructuredOutput.executor": "Run",
+    "Python.StructuredStream.executor": "Run",
     "Python.Tool.executor": "Run",
     "Python.ToolTypeDict.executor": "Run",
     "Python.Two.executor": "Run",
@@ -210,7 +212,7 @@
       <workItem from="1741785481299" duration="2569000" />
       <workItem from="1741863366975" duration="430000" />
       <workItem from="1741871872032" duration="4491000" />
-      <workItem from="1741935382026" duration="10356000" />
+      <workItem from="1741935382026" duration="11406000" />
     </task>
     <servers />
   </component>
@@ -231,6 +233,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/langchainDemo$ChatPromptTemplate.coverage" NAME="ChatPromptTemplate Coverage Results" MODIFIED="1741873250473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$PromptTemplates.coverage" NAME="PromptTemplates Coverage Results" MODIFIED="1741872672780" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$StructuredStream.coverage" NAME="StructuredStream Coverage Results" MODIFIED="1741946210539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$ToolTypeDict.coverage" NAME="ToolTypeDict Coverage Results" MODIFIED="1741940097923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$Two.coverage" NAME="Two Coverage Results" MODIFIED="1740903645900" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$Tool.coverage" NAME="Tool Coverage Results" MODIFIED="1741938734568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
@@ -238,6 +241,6 @@
     <SUITE FILE_PATH="coverage/langchainDemo$langchainOne.coverage" NAME="langchainOne Coverage Results" MODIFIED="1740045029990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/langchainDemo$Prompt.coverage" NAME="Prompt Coverage Results" MODIFIED="1741938477068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$StructuredOutput.coverage" NAME="StructuredOutput Coverage Results" MODIFIED="1741942477056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
-    <SUITE FILE_PATH="coverage/langchainDemo$StructuredMultiple.coverage" NAME="StructuredMultiple Coverage Results" MODIFIED="1741945757008" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$StructuredMultiple.coverage" NAME="StructuredMultiple Coverage Results" MODIFIED="1741946146526" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
   </component>
 </project>
