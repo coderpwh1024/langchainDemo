@@ -1,8 +1,6 @@
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 from langchain_core.prompts import ChatPromptTemplate
 
-from langchainDemo.StructuredPrompting import system, prompt, few_shot_structured_llm
-
 examples = [
 
     HumanMessage("Tell me a joke about planes", name="example_user"),
@@ -69,4 +67,19 @@ few_shot_structured_llm = prompt
 
 few_shot_structured_llm.invoke({"input": "crocodiles", "examples": examples})
 
+endpoint = " "
+deployment = ""
+apiKey = ""
 
+from langchain_openai import AzureChatOpenAI
+
+model = AzureChatOpenAI(
+    azure_endpoint=endpoint,
+    azure_deployment=deployment,
+    api_key=apiKey,
+    openai_api_version="2024-05-01-preview",
+)
+
+result: str = model.invoke(few_shot_structured_llm.invoke({"input": "crocodiles", "examples": examples}))
+print("结果为:\n")
+print(result)
