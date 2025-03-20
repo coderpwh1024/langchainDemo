@@ -5,8 +5,8 @@ from langchain.globals import set_llm_cache
 from langchain_openai import AzureChatOpenAI
 
 endpoint = ""
-deployment = ""
-apiKey = ""
+deployment = " "
+apiKey = " "
 
 from langchain_openai import AzureChatOpenAI
 
@@ -22,4 +22,10 @@ model = AzureChatOpenAI(
 from langchain_core.caches import  InMemoryCache
 
 set_llm_cache( InMemoryCache())
-print(model.invoke("Tell me a joke"))
+print(model.invoke("I need one million"))
+
+
+
+
+
+

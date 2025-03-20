@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5652da04-9d13-441e-a34d-8183dc799db9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/langchainDemo/AzureOpenAi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/langchainDemo/CustomParsing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/langchainDemo/ChatCache.py" beforeDir="false" afterPath="$PROJECT_DIR$/langchainDemo/ChatCache.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,37 +31,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.AzureOpenAi.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ChatPromptTemplate.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Prompt.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PromptTemplates.executor&quot;: &quot;Run&quot;,
-    &quot;Python.PydanticOutputParser.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StructuredMessage.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StructuredMultiple.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StructuredOutput.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StructuredPrompting.executor&quot;: &quot;Run&quot;,
-    &quot;Python.StructuredStream.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Tool.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ToolTypeDict.executor&quot;: &quot;Run&quot;,
-    &quot;Python.Two.executor&quot;: &quot;Run&quot;,
-    &quot;Python.langchainOne (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.langchainOne.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/coderpwh/python/workspace/langchainDemo&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.AzureOpenAi.executor": "Run",
+    "Python.ChatCache.executor": "Run",
+    "Python.ChatPromptTemplate.executor": "Run",
+    "Python.Prompt.executor": "Run",
+    "Python.PromptTemplates.executor": "Run",
+    "Python.PydanticOutputParser.executor": "Run",
+    "Python.StructuredMessage.executor": "Run",
+    "Python.StructuredMultiple.executor": "Run",
+    "Python.StructuredOutput.executor": "Run",
+    "Python.StructuredPrompting.executor": "Run",
+    "Python.StructuredStream.executor": "Run",
+    "Python.Tool.executor": "Run",
+    "Python.ToolTypeDict.executor": "Run",
+    "Python.Two.executor": "Run",
+    "Python.langchainOne (1).executor": "Run",
+    "Python.langchainOne.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "/Users/coderpwh/python/workspace/langchainDemo",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
-  <component name="RunManager" selected="Python.AzureOpenAi">
+}]]></component>
+  <component name="RunManager" selected="Python.ChatCache">
     <configuration name="AzureOpenAi" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="langchainDemo" />
       <option name="ENV_FILES" value="" />
@@ -78,6 +78,29 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/langchainDemo/AzureOpenAi.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="ChatCache" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="langchainDemo" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/langchainDemo" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/langchainDemo/ChatCache.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,36 +178,13 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="StructuredPrompting" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="langchainDemo" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/langchainDemo" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/langchainDemo/StructuredPrompting.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.ChatCache" />
         <item itemvalue="Python.AzureOpenAi" />
         <item itemvalue="Python.PydanticOutputParser" />
         <item itemvalue="Python.StructuredMessage" />
         <item itemvalue="Python.PromptTemplates" />
-        <item itemvalue="Python.StructuredPrompting" />
       </list>
     </recent_temporary>
   </component>
@@ -221,6 +221,7 @@
       <workItem from="1741935382026" duration="14018000" />
       <workItem from="1742179735286" duration="7863000" />
       <workItem from="1742439857387" duration="1613000" />
+      <workItem from="1742477884553" duration="717000" />
     </task>
     <servers />
   </component>
@@ -248,7 +249,8 @@
     <SUITE FILE_PATH="coverage/langchainDemo$StructuredMessage.coverage" NAME="StructuredMessage Coverage Results" MODIFIED="1742182635202" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$StructuredOutput.coverage" NAME="StructuredOutput Coverage Results" MODIFIED="1741942477056" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$StructuredStream.coverage" NAME="StructuredStream Coverage Results" MODIFIED="1741946210539" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
-    <SUITE FILE_PATH="coverage/langchainDemo$AzureOpenAi.coverage" NAME="AzureOpenAi Coverage Results" MODIFIED="1742440918007" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$AzureOpenAi.coverage" NAME="AzureOpenAi Coverage Results" MODIFIED="1742477919293" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
+    <SUITE FILE_PATH="coverage/langchainDemo$ChatCache.coverage" NAME="ChatCache Coverage Results" MODIFIED="1742478422452" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$langchainOne__1_.coverage" NAME="langchainOne (1) Coverage Results" MODIFIED="1741872526004" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
     <SUITE FILE_PATH="coverage/langchainDemo$langchainOne.coverage" NAME="langchainOne Coverage Results" MODIFIED="1740045029990" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/langchainDemo$Prompt.coverage" NAME="Prompt Coverage Results" MODIFIED="1741938477068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/langchainDemo" />
