@@ -86,3 +86,34 @@ class CustomChatModel(BaseChatModel):
         ##
         generation =ChatGeneration(message=message)
         return ChatResult(generations=[generation])
+
+    def _stream(
+        self,
+        messages: list[BaseMessage],
+        stop: Optional[list[str]] = None,
+        run_manager: Optional[CallbackManagerForLLMRun] = None,
+        **kwargs: Any,
+    ) -> Iterator[ChatGenerationChunk]:
+        """Stream the output of the model.
+
+        This method should be implemented if the model can generate output
+        in a streaming fashion. If the model does not support streaming,
+        do not implement it. In that case streaming requests will be automatically
+        handled by the _generate method.
+
+        Args:
+            messages: the prompt composed of a list of messages.
+            stop: a list of strings on which the model should stop generating.
+                  If generation stops due to a stop token, the stop token itself
+                  SHOULD BE INCLUDED as part of the output. This is not enforced
+                  across models right now, but it's a good practice to follow since
+                  it makes it much easier to parse the output of the model
+                  downstream and understand why generation stopped.
+            run_manager: A run manager with callbacks for the LLM.
+        """
+        last_message = messages[-1]
+        tokens = str(last_message.content[:self.parrot_buffer_length])
+        ct_input_tokens = sum(len(message.content) for message in messages)
+
+
+
