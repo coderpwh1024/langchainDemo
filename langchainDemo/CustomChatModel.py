@@ -15,6 +15,8 @@ from langchain_core.messages.ai import UsageMetadata
 from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResult
 from pydantic import Field
 
+from langchainDemo.Two import messages
+
 
 class CustomChatModel(BaseChatModel):
     """A custom chat model that echoes the first `parrot_buffer_length` characters
@@ -36,19 +38,18 @@ class CustomChatModel(BaseChatModel):
     """
     model_name: str = Field(alias="model")
     """The number of characters from the last message of the prompt to be echoed."""
-    temperature: Optional[float]=None
-    max_tokens: Optional[int]=None
-    timeout: Optional[int]=None
-    stop:Optional[List[str]]=None
-    max_retries: Optional[int]=None
-
+    temperature: Optional[float] = None
+    max_tokens: Optional[int] = None
+    timeout: Optional[int] = None
+    stop: Optional[List[str]] = None
+    max_retries: Optional[int] = None
 
     def _generate(
-        self,
-        messages: list[BaseMessage],
-        stop: Optional[list[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
-        **kwargs: Any,
+            self,
+            messages: list[BaseMessage],
+            stop: Optional[list[str]] = None,
+            run_manager: Optional[CallbackManagerForLLMRun] = None,
+            **kwargs: Any,
     ) -> ChatResult:
         """Override the _generate method to implement the chat model logic.
 
@@ -67,3 +68,21 @@ class CustomChatModel(BaseChatModel):
         """
         last_message = messages[-1]
         tokens = last_message.content[:self.parrot_buffer_length]
+        ct_input_tokens = sum(len(messages.content) for messages in messages)
+        ct_output_tokens = len(tokens)
+        message = AIMessage(
+            content=tokens,
+            additional_kwargs={},  # Used to add additional payload to the message
+            response_metadata={  # Use for response metadata
+                "time_in_seconds": 3,
+                "model_name": self.model_name,
+            },
+            usage_metadata={
+                "input_tokens": ct_input_tokens,
+                "output_tokens": ct_output_tokens,
+                "total_tokens": ct_input_tokens + ct_output_tokens,
+            },
+        )
+        ##
+        generation =ChatGeneration(message=message)
+        return ChatResult(generations=[generation])
