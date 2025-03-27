@@ -1,3 +1,4 @@
+from lib2to3.btm_utils import tokens
 from typing import Any, Dict, Iterator, List, Optional
 
 from langchain_core.callbacks import (
@@ -64,3 +65,5 @@ class CustomChatModel(BaseChatModel):
                   downstream and understand why generation stopped.
             run_manager: A run manager with callbacks for the LLM.
         """
+        last_message = messages[-1]
+        tokens = last_message.content[:self.parrot_buffer_length]
