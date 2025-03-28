@@ -14,6 +14,7 @@ from langchain_core.messages import (
 from langchain_core.messages.ai import UsageMetadata
 from langchain_core.outputs import ChatGeneration, ChatGenerationChunk, ChatResult
 from pydantic import Field
+from pydantic.fields import PropertyT
 
 from langchainDemo.Two import messages
 
@@ -84,15 +85,15 @@ class CustomChatModel(BaseChatModel):
             },
         )
         ##
-        generation =ChatGeneration(message=message)
+        generation = ChatGeneration(message=message)
         return ChatResult(generations=[generation])
 
     def _stream(
-        self,
-        messages: list[BaseMessage],
-        stop: Optional[list[str]] = None,
-        run_manager: Optional[CallbackManagerForLLMRun] = None,
-        **kwargs: Any,
+            self,
+            messages: list[BaseMessage],
+            stop: Optional[list[str]] = None,
+            run_manager: Optional[CallbackManagerForLLMRun] = None,
+            **kwargs: Any,
     ) -> Iterator[ChatGenerationChunk]:
         """Stream the output of the model.
 
@@ -114,6 +115,4 @@ class CustomChatModel(BaseChatModel):
         last_message = messages[-1]
         tokens = str(last_message.content[:self.parrot_buffer_length])
         ct_input_tokens = sum(len(message.content) for message in messages)
-
-
 
