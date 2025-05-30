@@ -9,7 +9,7 @@ from graph.StateGraph import graph_builder, State
 
 apiKey = ""
 endpoint = ""
-open_ai_version = ""
+open_ai_version = "2024-05-01-preview"
 azure_deployment = ""
 
 llm = init_chat_model(
