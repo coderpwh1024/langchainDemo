@@ -7,14 +7,14 @@ from torch.cuda import graph
 from graph.StateGraph import graph_builder, State
 
 
-
-apiKey=" "
-endpoint=""
-open_ai_version="2024-05-01-preview"
+apiKey = ""
+endpoint = ""
+open_ai_version = ""
+azure_deployment = ""
 
 llm = init_chat_model(
     "azure_openai:gpt-4.0",
-    azure_deployment="",
+    azure_deployment=azure_deployment,
     azure_endpoint=endpoint,
     api_key=apiKey,
     openai_api_version=open_ai_version,

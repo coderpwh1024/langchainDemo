@@ -1,26 +1,19 @@
 import os
-
 from langchain.chat_models import init_chat_model
-from langgraph.constants import END, START
-from langgraph.graph import StateGraph
 from langchain_tavily import TavilySearch
-import pprint  # 导入美观打印模块
-
-from graph.StateGraph import graph_builder
-from langchainDemo.Tool import llm_with_tools
-from langchainDemo.Two import messages
 
 tool = TavilySearch(max_results=2, tavily_api_key="")
 tools = [tool]
-result = tool.invoke("武汉烧烤")
+tool.invoke("What's a 'node' in LangGraph?")
 
-apiKey = " "
+apiKey = ""
 endpoint = ""
-open_ai_version = "2024-05-01-preview"
+open_ai_version = ""
+azure_deployment = ""
 
 llm = init_chat_model(
     "azure_openai:gpt-4.0",
-    azure_deployment="",
+    azure_deployment=azure_deployment,
     azure_endpoint=endpoint,
     api_key=apiKey,
     openai_api_version=open_ai_version,
@@ -28,6 +21,7 @@ llm = init_chat_model(
 
 from typing import Annotated
 from typing_extensions import TypedDict
+from langgraph.graph import StateGraph, START, END
 from langgraph.graph.message import add_messages
 
 
@@ -36,7 +30,6 @@ class State(TypedDict):
 
 
 graph_builder = StateGraph(State)
-
 llm_with_tools = llm.bind_tools(tools)
 
 
@@ -68,6 +61,10 @@ class BasicToolNode:
                 ToolMessage(content=json.dumps(tool_result), name=tool_call["name"], tool_call_id=tool_call["id"])
             )
         return {"messages": outputs}
+
+tool_node = BasicToolNode(tools=[tool])
+graph_builder.add_node("tools", tool_node)
+
 
 
 def route_tools(
@@ -116,8 +113,6 @@ while True:
         print("User: " + user_input)
         stream_graph_updates(user_input)
         break
-
-
 
 # from typing import Annotated
 #

@@ -3,7 +3,7 @@ import pprint  # 导入美观打印模块
 
 tool = TavilySearch(max_results=2,tavily_api_key="")
 tools = [tool]
-result= tool.invoke("武汉烧烤")
+result= tool.invoke("武汉端午旅游")
 
 # 创建美观打印对象
 pp = pprint.PrettyPrinter(indent=2, width=80, depth=3, compact=False)
