@@ -37,7 +37,7 @@ from langchain.chat_models import init_chat_model
 
 apiKey = " "
 endpoint = " "
-open_ai_version = "2024-05-01-previe"
+open_ai_version = "2024-05-01-preview"
 azure_deployment = " "
 
 llm = init_chat_model(
