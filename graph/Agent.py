@@ -75,3 +75,35 @@ def polish_joke(state: State):
     """Third LLM call for final polish"""
     msg = llm.invoke(f"Add a surprising twist to this joke: {state['improved_joke']}")
     return {"final_joke": msg.content}
+
+
+workflow = StateGraph(State)
+
+workflow.add_node("generate_joke", generate_joke)
+workflow.add_node("improve_joke", improve_joke)
+workflow.add_node("polish_joke", polish_joke)
+
+workflow.add_edge(START, "generate_joke")
+workflow.add_conditional_edges("generate_joke", check_punchline, {"Fail": "improve_joke", "Pass": END})
+workflow.add_edge("improve_joke", "polish_joke")
+workflow.add_edge("polish_joke", END)
+
+chain = workflow.compile()
+display(Image(chain.get_graph().draw_mermaid_png()))
+
+state = chain.invoke("topic", "cats")
+print("Initial joke")
+print(state["joke"])
+print("\n--- --- ---\n")
+if  "improved_joke" in state:
+    print("Improvted joke:")
+    print(state["improved_joke"])
+    print("\n--- --- ---\n")
+
+    print("Final joke:")
+    print(state["final_joke"])
+
+else:
+    print("Joke failed quality gate - no punchline detected!")
+
+
