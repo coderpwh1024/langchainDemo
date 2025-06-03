@@ -40,7 +40,7 @@ def human_assistance(query: str) -> str:
     return human_response["data"]
 
 
-tool = TavilySearch(max_results=2, tavily_api_key="")
+tool = TavilySearch(max_results=2, tavily_api_key="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")
 tools = [tool, human_assistance]
 llm_with_tools = llm.bind_tools(tools)
 

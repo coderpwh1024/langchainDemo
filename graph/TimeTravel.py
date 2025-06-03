@@ -1,11 +1,5 @@
 import os
 from langchain.chat_models import init_chat_model
-from torch.cuda import graph
-
-from graph.HumanAssistanceTool import events
-from graph.Memory import memory, config
-from graph.StateGraph import graph_builder
-from langchainDemo.Tool import llm_with_tools
 
 apiKey = ""
 endpoint = ""
@@ -77,35 +71,35 @@ for event in events:
     if "messages" in event:
         event["messages"][-1].pretty_print()
 
-events = graph.stream(
-    {
-        "messages": [
-            {
-                "role": "user",
-                "content": (
-                    "Ya that's helpful. Maybe I'll "
-                    "build an autonomous agent with it!"
-                ),
-            },
-        ],
-    },
-    config,
-    stream_mode="values"
-)
-for event in events:
-    if "messages" in event:
-        event["messages"][-1].pretty_print()
-
-to_replay = None
-for state in graph.get_state_history(config):
-    print("Num messages: ", len(state.values["messages"]), "Next: ", state.next)
-    print("-" * 80)
-    if len(state.values["messages"]) == 6:
-        to_replay = state
-
-print(to_replay.next)
-print(to_replay.config)
-
-for event in events:
-    if "messages" in event:
-        event["messages"][-1].pretty_print()
+# events = graph.stream(
+#     {
+#         "messages": [
+#             {
+#                 "role": "user",
+#                 "content": (
+#                     "Ya that's helpful. Maybe I'll "
+#                     "build an autonomous agent with it!"
+#                 ),
+#             },
+#         ],
+#     },
+#     config,
+#     stream_mode="values"
+# )
+# for event in events:
+#     if "messages" in event:
+#         event["messages"][-1].pretty_print()
+#
+# to_replay = None
+# for state in graph.get_state_history(config):
+#     print("Num messages: ", len(state.values["messages"]), "Next: ", state.next)
+#     print("-" * 80)
+#     if len(state.values["messages"]) == 6:
+#         to_replay = state
+#
+# print(to_replay.next)
+# print(to_replay.config)
+#
+# for event in graph.stream(None, to_replay.config, stream_mode="values"):
+#      if "messages" in event:
+#         event["messages"][-1].pretty_print()
