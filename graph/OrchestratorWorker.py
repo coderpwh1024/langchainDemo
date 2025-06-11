@@ -76,5 +76,16 @@ def llm_call(state: WorkerState):
             content=f"Here is the section name: {state['section'].name} and description: {state['section'].description}"
         ),
     ])
-
     return {"completed_sections": [section.content]}
+
+
+def synthesizer(state: State):
+    """Synthesize full report from sections"""
+    completed_sections = state["completed_sections"]
+    completed_report_sections = "\n\n---\n\n".join(completed_sections)
+    return {"final_report": completed_report_sections}
+
+
+def assign_workers(state: State):
+    """Assign a worker to each section in the plan"""
+    return [Send("llm_call", {"section": s}) for s in state["sections"]]
