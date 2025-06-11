@@ -1,14 +1,19 @@
 # 协调器
 import os
+from tkinter import Image
 from typing import TypedDict
 
+from IPython.core.display_functions import display
 from langchain.chat_models import init_chat_model
 from langchain_core.messages import SystemMessage, HumanMessage
-from langgraph.constants import Send
+from langgraph.constants import Send, START, END
 from typing import Annotated, List
 import operator
 
+from langgraph.graph import StateGraph
 from pydantic import BaseModel, Field
+
+from graph.Agent import state
 
 apiKey = ""
 endpoint = ""
@@ -89,3 +94,24 @@ def synthesizer(state: State):
 def assign_workers(state: State):
     """Assign a worker to each section in the plan"""
     return [Send("llm_call", {"section": s}) for s in state["sections"]]
+
+
+orchestrator_worker_builder = StateGraph(State)
+
+orchestrator_worker_builder.add_node("orchestrator", orchestrator)
+orchestrator_worker_builder.add_node("llm_call", llm_call)
+orchestrator_worker_builder.add_node("synthesizer", synthesizer)
+
+orchestrator_worker_builder.add_edge(START, "orchestrator")
+orchestrator_worker_builder.add_conditional_edges("orchestrator", assign_workers, ["llm_call"])
+orchestrator_worker_builder.add_edge("llm_call", "synthesizer")
+orchestrator_worker_builder.add_edge("synthesizer", END)
+
+orchestrator_worker = orchestrator_worker_builder.compile()
+display(Image(orchestrator_worker.get_graph().draw_mermaid_png()))
+
+state = orchestrator_worker.invoke({"topic": "Create a report on LLM scaling laws"})
+
+from IPython.display import Markdown
+
+Markdown(state["final_report"])
