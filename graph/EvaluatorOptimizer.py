@@ -1,8 +1,11 @@
-from dataclasses import Field
 from typing import TypedDict, Literal
-
+from pydantic import BaseModel, Field
+from IPython.core.display_functions import display
 from langchain.chat_models import init_chat_model
+from langgraph.constants import START, END
+from langgraph.graph import StateGraph
 from pydantic import BaseModel
+from IPython.display import Image, display
 
 apiKey = ""
 endpoint = ""
@@ -16,6 +19,7 @@ llm = init_chat_model(
     api_key=apiKey,
     openai_api_version=open_ai_version,
 )
+
 
 
 class State(TypedDict):
@@ -39,7 +43,6 @@ evaluator = llm.with_structured_output(Feedback)
 
 def llm_call_generator(state: State) -> Feedback:
     """LLM generates a joke"""
-
     if state.get("feedback"):
         msg = llm.invoke(
             f"Write a joke about {state['topic']} but take into account the feedback: {state['feedback']}"
@@ -55,7 +58,35 @@ def llm_call_evaluator(state: State):
     return {"funny_or_not": grade.grade, "feedback": grade.feedback}
 
 
+def route_joke(state: State):
+    """Route back to joke generator or end based upon feedback from the evaluator"""
+
+    if state["funny_or_not"] == "funny":
+        return "Accepted"
+    elif state["funny_or_not"] == "not funny":
+        return "Rejected + Feedback"
 
 
+optimizer_builder = StateGraph(State)
 
+optimizer_builder.add_node("llm_call_generator", llm_call_generator)
+optimizer_builder.add_node("llm_call_evaluator", llm_call_evaluator)
 
+optimizer_builder.add_edge(START, "llm_call_generator")
+optimizer_builder.add_edge("llm_call_generator", "llm_call_evaluator")
+optimizer_builder.add_conditional_edges(
+    "llm_call_evaluator",
+    route_joke,
+    {
+        "Accepted": END,
+        "Rejected + Feedback": "llm_call_generator",
+    },
+)
+
+optimizer_workflow = optimizer_builder.compile()
+
+# Show the workflow
+display(Image(optimizer_workflow.get_graph().draw_mermaid_png()))
+
+state = optimizer_workflow.invoke({"topic": "cats"})
+print(state["joke"])
