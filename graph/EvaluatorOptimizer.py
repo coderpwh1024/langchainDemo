@@ -47,3 +47,15 @@ def llm_call_generator(state: State) -> Feedback:
     else:
         msg = llm.invoke(f"Write a joke about {state['topic']}")
     return {"joke": msg.content}
+
+
+def llm_call_evaluator(state: State):
+    """LLM evaluates the joke"""
+    grade = evaluator.invoke(f"Grade the joke {state['joke']}")
+    return {"funny_or_not": grade.grade, "feedback": grade.feedback}
+
+
+
+
+
+

@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5652da04-9d13-441e-a34d-8183dc799db9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/graph/EvaluatorOptimizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/graph/EvaluatorOptimizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/graph/EvaluatorOptimizer.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +249,8 @@
       <workItem from="1749637744417" duration="167000" />
       <workItem from="1749637917477" duration="1487000" />
       <workItem from="1750167876047" duration="230000" />
-      <workItem from="1750168113037" duration="1587000" />
+      <workItem from="1750168113037" duration="2711000" />
+      <workItem from="1750384396953" duration="655000" />
     </task>
     <servers />
   </component>
